@@ -15,9 +15,13 @@ class MatrixSpec extends Specification with ScalaCheckMatchers {
       matrix.scalarProduct(ring.one) must be_===(matrix)
     }
 
+    "respect associativity" in prop { (matrix: Matrix[Int], x: Int, y: Int) =>
+      matrix.scalarProduct(x).scalarProduct(y) must be_===(matrix.scalarProduct(ring.times(x, y)))
+    }
+
   }
 
-  "matrix multiplication" should {
+  "matrix product" should {
 
     "calculate Wikipedia example correctly" in {
       /*
