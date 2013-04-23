@@ -14,12 +14,14 @@ object Ring {
 
   implicit object IntRing extends Ring[Int] {
 
-    def plus(x: Int, y: Int) = ???
-    def times(x: Int, y: Int) = ???
+    def plus(x: Int, y: Int) = x + y
+    def times(x: Int, y: Int) = x * y
 
-    def zero = ???
-    def one = ???
+    def zero = 0
+    def one = 1
 
   }
 
 }
+
+// vim: expandtab:ts=2:sw=2
